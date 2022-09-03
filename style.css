@@ -1,20 +1,43 @@
 * {
     box-sizing: border-box;
-}
+  }
+  
+  body {
+    font-family: <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">;
+    grid-row;
+  }
+  
+  header {
+    background-color: rgb(77, 114, 77);
+    text-align: center;
+    font-size: 35px;
+    color: rgb(236, 234, 234);
+    height: 25vh;
+  }
+  
+  nav {
+    background: rgba(116, 89, 89, 0.075);
+    text-align: center;
+    color: black;
+    height: 5vh;
+  }
+  
 
-body {
-    margin: 0px;
-    font-family: Arial, sans-serif;
-}
-header, section {
-    padding: 20px;
-}
-p, li {
-    line-height: 1.5em;
-}
+  
+  main {
+    text-align: center;
+    background-color: #94949442;
+    height:60vh;
+    width:10vw 80vw 10vw;
+  }
+  
 
-#inspiration {
-    background-color: #F0F0F0;
-    padding-top: 40px;
-    padding-bottom: 40px;
-}
+  
+  footer {
+    background-color: #777;
+    text-align: center;
+    color: white;
+    height: 10vh;
+  }
