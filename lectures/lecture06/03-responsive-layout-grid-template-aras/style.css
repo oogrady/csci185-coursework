@@ -30,31 +30,44 @@ body {
   height: 50vh;
 }
 
-/* Task 3 */
-
-.task-3.container {
+.container {
+  display: grid;
+  grid-template-columns: 20vw auto 25%;
+  grid-template-rows: 10% 10% 70% 10%;
+  border: solid 1px green;
+  height: 100vh;
+  row-gap: 15px;
+  column-gap: 15px;
 }
-
-.task-3 .header {
+ 
+.header {
+  grid-row-start: 1;
+  grid-column-start: 1;
+  grid-column-end: span 3;
 }
-
-.task-3 .navigation {
+.navigation{
+  grid-row-start: 2;
+  grid-column-start: 2;
 }
-
-.task-3 .ads {
+.siderbar{
+  grid-column: 1;
+  grid-row-start: 2;
+  grid-row-end: 4;
 }
-
-.task-3 .sidebar {
+.ads{
+  grid-column-start: 3;
+  grid-row-start: 2;
+  grid-row-end: span 2;
 }
-
-.task-3 .main {
+.main{
+  grid-column-start: 2;
+  grid-row-start: 3;
 }
-
-.task-3 .footer {
+.footer {
+  grid-row-start: 4;
+  grid-column-start: 1;
+  grid-column-end: span 3;
 }
-
-
-
 @media (max-width: 1020px) {
 }
 
