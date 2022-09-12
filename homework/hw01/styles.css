@@ -1,0 +1,120 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body * {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+/* Your CSS Code Here! */
+nav{
+    background-color: teal;
+    padding: 0;
+}
+ul{
+    list-style: none;
+    text-align: right;
+    background-color: teal;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+    color: white;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+header{
+    background-color: teal;
+    text-align: center;
+    border-radius: 1%;
+    padding: 10px;
+    margin: 0;
+}
+img#profile-pic{
+    border-radius: 50%;
+    padding: 0;
+    height: auto;
+    width: 120px;
+}
+h1{
+    color: white;
+    font-family: 'Patrick Hand', cursive;
+    padding-bottom: 15px;
+}
+section#about{
+    padding-left: 200px;
+    padding-right: 200px;
+    padding-top: 50px;
+    line-height: 30px;
+    font-size: medium;
+}
+h2{
+    font-family: 'Patrick Hand', cursive;
+    font-weight: bold;
+    text-align: center;
+}
+p{
+    font-family: 'Montserrat', sans-serif;
+}
+ul{
+    font-family: 'Montserrat', sans-serif;
+}
+div.project-holder{
+    display: grid;
+    grid-template-columns: auto auto;
+    padding-left: 200px;
+    padding-right: 100px;
+}
+#contact{
+    padding-left: 200px;
+    padding-right: 200px;
+}
+div.contact-details{
+    display: grid;
+    grid-template-columns: 65% 35%;
+    /* padding-left: 150px; */
+    /* padding-right:150px; */
+}
+input{
+    background-color: lightgray;
+    border: none;
+    margin-bottom: 15px;
+    height: 30px;
+    width: 100%;
+    margin-top: 15px;
+}
+textarea{
+    background-color: lightgray;
+    height: 100px;
+    width: 500px;
+    border: none;
+    margin-bottom: 15px;
+}
+input#submit{
+    background-color: teal;
+    border: none;
+    border-radius: 4%;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    height: 20px;
+    width: 125px;
+}
+input#email{
+    width: 295px;
+}
+input#name{
+    width: 200px;
+}
+footer{
+    background-color: gainsboro;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+    font-weight: bold;
+
+}
