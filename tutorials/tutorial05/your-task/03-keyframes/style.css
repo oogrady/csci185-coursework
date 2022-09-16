@@ -17,7 +17,6 @@ html{
     animation-delay: 1s;
     animation-duration: 12s;
 }
-
 #cloud2 {
     position: absolute;
     color: #EEE;
@@ -31,7 +30,6 @@ html{
     animation-delay: 5s;
     animation-duration: 5s;
 }
-
 #sun {
     position: absolute;
     color: #ff3300;
@@ -40,14 +38,12 @@ html{
     font-size: 200px;
 
     /* Add animation properties for the sun here: */
-    /* animation-fill-mode: forwards; */
     animation-direction: alternate;
     animation-iteration-count: infinite; 
     animation-name: sunrise;
     animation-delay: 1s;
     animation-duration: 12s;
 }
-
 @keyframes moveCloudRight {
     from { 
         left: -150px;
@@ -60,7 +56,6 @@ html{
         scale: 200%;
     }
 }
-
 @keyframes moveCloudLeft {
     from { 
         left: calc(100vw + 100px); 
@@ -73,9 +68,6 @@ html{
         scale: 10%;
     }
 } 
-
-
-
 @keyframes sunrise {
     from { 
         bottom: calc(100vh + 100px);
