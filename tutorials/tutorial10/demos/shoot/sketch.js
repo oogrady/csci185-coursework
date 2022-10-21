@@ -6,11 +6,13 @@ const bubbles = [];
 let x = canvasWidth / 2;
 let y = canvasHeight / 2 - 50;
 let d = 50;
+let color1 = 'hotpink';
+let color2 = 'green';
 
 function setup() {
     createCanvas(canvasWidth, canvasHeight);
 
-    circle(x, y, 50);
+    // circle(x, y, 50);
 
     displayMessage();
 }
@@ -32,10 +34,30 @@ function draw() {
     // 2. loop through the bubbles list and draw / animate each bubble:
     for (const bubble of bubbles) {
         circle(bubble.x, bubble.y, bubble.d);
-        bubble.y -= bubble.speed;
+        bubble.x -= bubble.speed;
     }
 
-    circle(x, y, 50);
+    stroke(color1);
+        strokeWeight(9);
+        fill('nofill');
+        curve(
+            x, y-100,
+            x, y,
+            x+(80+10), y-12,
+            x, y-500
+        )
+        fill(color2);
+        rect(x+(80+10), y-12, 80*.1)
+        fill(color1);
+        strokeWeight(1);
+        circle(x, y, 80*1.5);
+        fill('white');
+        stroke(color2);
+        strokeWeight(2);
+        circle(x-(x*.07), y, 80*.4);
+        fill(color2);
+        circle(x-(x*.07), y, 80*.1);
+ 
 
     // message:
     displayMessage();
@@ -45,12 +67,10 @@ function draw() {
 
 function moveController(ev) {
     console.log(ev.code);
-    if (ev.code == 'ArrowLeft') {
-        console.log('left arrow!');
-        x -= 5;
-    } else if (ev.code == 'ArrowRight') {
-        console.log('right arrow!');
-        x += 5;
+    if (ev.code == 'ArrowDown') {
+        y += 8;
+    } else if (ev.code == 'ArrowUp') {
+        y -= 8;
     } else if (ev.code == 'Space') {
         shoot();
     }
@@ -63,7 +83,7 @@ function displayMessage() {
     fill('black');
      textAlign(CENTER);
      textSize(16);
-     text("Use the arrow keys to move the avatar, spacebar to shoot.", canvasWidth/2, canvasHeight/2);
+    //  text("Use the arrow keys to move the avatar, spacebar to shoot.", canvasWidth/2, canvasHeight/2);
 }
 
 // Add event listener on keydown
