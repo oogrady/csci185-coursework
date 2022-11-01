@@ -62,9 +62,9 @@ function drawLandscape(i=true){
         const width = Math.random() * 2 + 0.5;
         circle(x, y, width);
     }
-    drawAsteroid(1000, 800, 200)
+    drawAsteroid(800, 600, 200)
     drawAsteroid(300, 200, 100)
-    drawAsteroid(1700, 400, 500)
+    drawAsteroid(1100, 100, 500)
 
 }
 function drawAsteroid(x, y, size) {
