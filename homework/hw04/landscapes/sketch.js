@@ -19,7 +19,7 @@ async function setup() {
     // circle(50, 400, 1.5);
     // circle(600, 287, 3);
     // circle(400, 143, 1.5);
-    drawBubbles();    
+    drawStar();    
     }
 
 

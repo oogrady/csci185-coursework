@@ -20,6 +20,12 @@ function randInt(min, max) {
 	// min and max included 
 	return Math.floor(Math.random() * (max - min + 1) + min);
 }
+function displayMessage() {
+    fill('black');
+     textAlign(CENTER);
+     textSize(16);
+     text("Use the arrows to move, spacebar to shoot, and 'h' to change colors.", canvasWidth/2, canvasHeight/2);
+}
 function shoot() {
     // 1. When you drag your mouse, create a bubble 
     //    object and add it to the "bubbles" list.
@@ -85,18 +91,14 @@ function moveController(ev) {
     } else if (ev.code == 'KeyH') {
         const idx = randInt(0, palette.length - 2);
         color1 = palette[idx];
-    }
+
     
     // message
    displayMessage();
 }
 
-function displayMessage() {
-    fill('black');
-     textAlign(CENTER);
-     textSize(16);
-     text("Use the arrows to move, spacebar to shoot, and 'h' to change colors.", canvasWidth/2, canvasHeight/2);
-}
+
 
 // Add event listener on keydown
 document.addEventListener('keydown', moveController);
+}
