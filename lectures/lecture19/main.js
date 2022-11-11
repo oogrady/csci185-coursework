@@ -4,6 +4,7 @@ async function fetchCourses() {
     const url = `https://meteor.unca.edu/registrar/class-schedules/api/v1/courses/2022/fall/`;
     data = await fetch(url).then(response => response.json());
     displayResults(data);
+    displayCourse(course);
 } 
 /* Your Tasks:
     1. Output the title of the first course to the console.
