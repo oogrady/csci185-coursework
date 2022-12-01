@@ -2051,7 +2051,8 @@ input, select, textarea {
 			}
 
 		.main.dark {
-			color: #ffffff;
+			color: #181818;
+			font-weight: bold;
 		}
 
 			.main.dark a {
