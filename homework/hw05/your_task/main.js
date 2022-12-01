@@ -16,63 +16,76 @@ function search (ev) {
 async function getTracks (term) {
     const tracksEndpoint = baseURL + "?q=" + term + "&type=track";
     console.log(tracksEndpoint);
-
     const data = await fetch(tracksEndpoint).then(response => response.json());
     console.log(data);
-    console.log(data[0].image_url);
-
     if(data.length == 0) {
-        document.querySelector('#tracks').innerHTML = "No results found.";
+        document.querySelector('#track').innerHTML = "No results found.";
         return;
        }
-    document.querySelector('#tracks').innerHTML = `
-    <ul>
-        <li><img src="${data[0].album.image_url}" width:30px, height:30px/>${data[0].name}</li>
-        <li><img src="${data[1].album.image_url}" width:30px, height:30px/>${data[1].name}</li>
-        <li><img src="${data[2].album.image_url}" width:30px, height:30px/>${data[2].name}</li>
-        <li><img src="${data[3].album.image_url}" width:30px, height:30px/>${data[3].name}</li>
-        <li><img src="${data[4].album.image_url}" width:30px, height:30px/>${data[4].name}</li>
-    </ul>
-   `
+    document.querySelector('#tracks').innerHTML = "";
+    for (let i = 0; i < 5; i++) {
+    const template = `
+            <section class="track-item preview" onclick="playSong('${data[i].id}')">
+                <img src="${data[i].album.image_url}" alt = "Album photo for ${data[i].name}">
+                <i class="fas play-track fa-play" aria-hidden="true"></i>
+                <div class="label">
+                    <h2>${data[i].name}</h2>
+                    <p>
+                        ${data[i].artist.name}
+                    </p>
+                </div>
+        </section>
+    `;
+    document.querySelector('#tracks').insertAdjacentHTML('beforeend', template);
+    }
 }
-
+function playSong(id) {
+    const template = `
+    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/${id}?utm_source=generator&theme=0" width="100%" 
+    height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+     loading="lazy"></iframe>
+    `;
+    document.querySelector('#artist').innerHTML = template;
+}
 async function getAlbums (term) {
     const albumEndpoint = baseURL + "?q=" + term + "&type=album";
     console.log(albumEndpoint);
-
     const data = await fetch(albumEndpoint).then(response => response.json());
     if(data.length == 0) {
-    document.querySelector('#artist').innerHTML = "No results found.";
+    document.querySelector('#albums').innerHTML = "No results found.";
     return;
    }
-   document.querySelector('#albums').innerHTML = `
-    <ul>
-        <li>${data[0].name}</li>
-        <li>${data[1].name}</li>
-        <li>${data[2].name}</li>
-        <li>${data[3].name}</li>
-        <li>${data[4].name}</li>
-    </ul>
-   `
-}
+   document.querySelector('#albums').innerHTML = "";
+   for (let i = 0; i < 5; i++) {
+   const template = `
+    <section class="album-card" id="${data[i].id}">
+    <div>
+        <img src="${data[i].image_url}" alt = "Album photo for ${data[i].name}">
+        <h2>${data[i].name}</h2>
+        <div class="footer">
+            <a href="https://open.spotify.com/album/${data[i].id}" target="_blank">
+                view on spotify
+            </a>
+        </div>
+    </div>
+    </section>
+   `;
+   document.querySelector('#albums').insertAdjacentHTML('beforeend', template);
+   }}
 
 async function getArtist (term) {
     const artistEndpoint = baseURL + "?q=" + term + "&type=artist";
     console.log(artistEndpoint);
-
     const data = await fetch(artistEndpoint).then(response => response.json());
     if(data.length == 0) {
     document.querySelector('#artist').innerHTML = "No results found.";
     return;
    }
-    // console.log(data);  
-    // console.log(data[0].name);
-    // console.log(data[0].image_url);
-    
+   document.querySelector('#artist').innerHTML = "";
     const template = `
     <section class="artist-card">
         <div>
-            <img src="${data[0].image_url}" width:200px, height:200px/>
+            <img src="${data[0].image_url}" alt = "A photo of ${data[0].name}">
                 <div class="card-footer">
                     <div>
                         <h2>${data[0].name}</h2>
@@ -84,9 +97,6 @@ async function getArtist (term) {
     `;
     
     document.querySelector('#artist').innerHTML = template;
-
-
-
 };
 
 
